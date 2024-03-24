@@ -71,7 +71,7 @@ void _autoScroll() {
         child: ListView.builder(
           controller: _scrollController, 
          // itemCount: splashProducts.length,
-         itemCount: 4,
+         itemCount: splashProducts.length - widget.startIndex,
           itemBuilder:
        (context, index ) {
         return Container(
