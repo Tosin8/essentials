@@ -70,7 +70,8 @@ void _autoScroll() {
         height: MediaQuery.of(context).size.height * 0.60, 
         child: ListView.builder(
           controller: _scrollController, 
-          itemCount: splashProducts.length,
+         // itemCount: splashProducts.length,
+         itemCount: 5,
           itemBuilder:
        (context, index ) {
         return Container(
@@ -83,8 +84,8 @@ void _autoScroll() {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20.0), 
             image: DecorationImage(
-              // image: splashProducts[widget.startIndex + index].image, 
-              image: splashProducts[index].image, 
+              image: splashProducts[widget.startIndex + index].image, 
+             // image: splashProducts[index].image, 
               fit: BoxFit.cover)
           ),
         ); 
