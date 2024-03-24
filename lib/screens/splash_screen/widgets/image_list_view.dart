@@ -50,7 +50,7 @@ void _autoScroll() {
 
     _scrollController.animateTo(
       currentScrollPosition == scrollEndPosition ? 0 : scrollEndPosition, 
-      duration: const Duration(seconds: 18), 
+      duration: const Duration(seconds: 30), 
       curve: Curves.linear, 
     ); 
   }); 
@@ -71,7 +71,7 @@ void _autoScroll() {
         child: ListView.builder(
           controller: _scrollController, 
          // itemCount: splashProducts.length,
-         itemCount: 5,
+         itemCount: 4,
           itemBuilder:
        (context, index ) {
         return Container(
