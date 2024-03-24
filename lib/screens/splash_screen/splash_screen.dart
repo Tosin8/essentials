@@ -10,9 +10,17 @@ class SplashScreen extends StatelessWidget {
       body: Stack(
         alignment: Alignment.center,
         children: [
+
+          // Image Transition 
 Positioned(
-  top: -10, left: -150, 
-  child: Row(children: [],))          
+  top: -10, 
+  left: -150, 
+  child: Row(
+    
+    children: [
+
+      
+    ],))          
         ],
       )
     );
