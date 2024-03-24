@@ -1,3 +1,4 @@
+import 'package:essentials/screens/constant.dart';
 import 'package:essentials/screens/splash_screen/widgets/image_list_view.dart';
 import 'package:flutter/material.dart';
 
@@ -6,14 +7,14 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.black,
       body: Stack(
         alignment: Alignment.center,
         children: [
 
           // Image Transition 
-Positioned(
+const Positioned(
   top: -10, 
   left: -150, 
   child: Row(
@@ -26,7 +27,14 @@ ImageListView(),
 ImageListView(), 
 ImageListView(), 
 
-    ],))          
+    ],
+    ), 
+    ), 
+
+    // title 
+  Positioned(
+    top: MediaQuery.of(context).size.height * 0.8, 
+    child: const Text('Essentials', style: kTitleStyle,))          
         ],
       )
     );
