@@ -63,6 +63,7 @@ flutter:
 
   #splash images...
      - assets/images/splash/
+     - assets/images/category/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -15,28 +15,24 @@ class CategoryScreen {
 
 List categories = [
   CategoryScreen(
-    title: 'Category 1',
-    subTitle: 'Sub Category 1',
+    title: 'T- SHIRTS',
+    subTitle: '100 Products',
     image: NetworkImage('https://picsum.photos/200'),
   ),
   CategoryScreen(
-    title: 'Category 2',
-    subTitle: 'Sub Category 2',
+    title: 'SHOES',
+    subTitle: '182 Products',
     image: NetworkImage('https://picsum.photos/200'),
   ),
   CategoryScreen(
-    title: 'Category 3',
-    subTitle: 'Sub Category 3',
+    title: 'FRAGNANCE',
+    subTitle: '86 PRODUCTS',
     image: NetworkImage('https://picsum.photos/200'),
   ),
   CategoryScreen(
-    title: 'Category 4',
-    subTitle: 'Sub Category 4',
+    title: 'MAKE UPS',
+    subTitle: '47 PRODUCTS',
     image: NetworkImage('https://picsum.photos/200'),
   ),
-  CategoryScreen(
-    title: 'Category 5',
-    subTitle: 'Sub Category 5',
-    image: NetworkImage('https://picsum.photos/200'),     
-  ),
+  
 ]; 
