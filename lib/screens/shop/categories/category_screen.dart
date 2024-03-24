@@ -39,9 +39,16 @@ class CategoryScreen extends StatelessWidget {
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      categories[0].title,
-                      categories[0].subTitle, 
+                      Text( categories[0].title, style: const TextStyle(color: Colors.white,
+                      letterSpacing: 1.5,
+                       fontSize: 18),),
+                      Text(categories[0].subTitle, style: const TextStyle(color: Colors.white,
+                      letterSpacing: 1.2,
+                       fontSize: 14, fontWeight: FontWeight.w400),),  
+                     
+                       const SizedBox(height: 10,), 
                     ],
                   ),
                 ),
