@@ -2,6 +2,8 @@ import 'package:essentials/screens/constant.dart';
 import 'package:essentials/screens/splash_screen/widgets/image_list_view.dart';
 import 'package:flutter/material.dart';
 
+import '../shop/categories/category_screen.dart';
+
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
@@ -101,7 +103,10 @@ ImageListView(startIndex: 2),
             style: OutlinedButton.styleFrom(
               side: const BorderSide(width: 2, color: Colors.blueGrey), 
                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))),
-            onPressed: (){},
+            onPressed: (){
+              Navigator.push(context, 
+              MaterialPageRoute(builder: (context) => const CategoryScreen()));
+            },
        child: const Text('Login ', style: TextStyle(color: Colors.black),)),))
 
     ]));

@@ -5,6 +5,14 @@ class CategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text('Category'),
+
+      ),
+      
+    );
   }
 }
