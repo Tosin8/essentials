@@ -33,10 +33,44 @@ ImageListView(),
 
     // title 
   Positioned(
-    top: MediaQuery.of(context).size.height * 0.8, 
-    child: const Text('Essentials', style: kTitleStyle,))          
+    top: MediaQuery.of(context).size.height * 0.08, 
+    child: const Text('Essentials',
+    textAlign: TextAlign.center,
+     style: kTitleStyle,), 
+     ), 
+
+// Information Screen
+
+     Positioned(
+      bottom: 0,
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height * 0.60,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Colors.transparent, 
+              Colors.white60, 
+              Colors.white, 
+              Colors.white, 
+            ], 
+            begin: Alignment.topCenter, end: Alignment.center, 
+            ), 
+      ), 
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('Your Appearance \nShows Your Quality',
+           style: kNormalStyle.copyWith(fontSize: 25), textAlign: TextAlign.center,),
+           const SizedBox(height : 30), 
+           Text('Change the Quality of Your \nAppearance With Essentials',
+           style: kNormalStyle.copyWith(fontSize: 15, color: Colors.grey,
+            height: 1.3), textAlign: TextAlign.center,),
         ],
+      ),
+      )          
+        
       )
-    );
+    ]));
   }
 }

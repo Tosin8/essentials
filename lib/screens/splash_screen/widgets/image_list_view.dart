@@ -50,7 +50,7 @@ void _autoScroll() {
 
     _scrollController.animateTo(
       currentScrollPosition == scrollEndPosition ? 0 : scrollEndPosition, 
-      duration: const Duration(seconds: 10), 
+      duration: const Duration(seconds: 18), 
       curve: Curves.linear, 
     ); 
   }); 
