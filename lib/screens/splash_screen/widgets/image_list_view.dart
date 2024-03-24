@@ -33,7 +33,7 @@ if(!_scrollController.position.atEdge) {
 WidgetsBinding.instance.addPostFrameCallback((_) { 
   _autoScroll(); 
 
-   _scrollController.jumpTo((_scrollController.position.pixels + splashProducts.length * _scrollController.position.viewportDimension) % _scrollController.position.maxScrollExtent);
+  //  _scrollController.jumpTo((_scrollController.position.pixels + splashProducts.length * _scrollController.position.viewportDimension) % _scrollController.position.maxScrollExtent);
 });
 
     }); 
@@ -49,7 +49,7 @@ void _autoScroll() {
   scheduleMicrotask(() { 
 
     _scrollController.animateTo(
-      currentScrollPosition < scrollEndPosition ? 0 : scrollEndPosition, 
+      currentScrollPosition == scrollEndPosition ? 0 : scrollEndPosition, 
       duration: const Duration(seconds: 10), 
       curve: Curves.linear, 
     ); 
