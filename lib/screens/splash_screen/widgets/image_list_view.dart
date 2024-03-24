@@ -7,10 +7,10 @@ import 'package:flutter/material.dart';
 
 class ImageListView extends StatefulWidget {
 
-  //final int startIndex; 
+  final int startIndex; 
   const ImageListView({
     super.key,
-    //required this.startIndex,
+    required this.startIndex,
   });
 
   @override

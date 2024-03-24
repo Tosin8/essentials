@@ -20,12 +20,12 @@ const Positioned(
   child: Row(
     
     children: [
-// ImageListView(startIndex: 0), 
-// ImageListView(startIndex: 1), 
-// ImageListView(startIndex: 2), 
-ImageListView(), 
-ImageListView(), 
-ImageListView(), 
+ImageListView(startIndex: 0), 
+ImageListView(startIndex: 1), 
+ImageListView(startIndex: 2), 
+// ImageListView(), 
+// ImageListView(), 
+// ImageListView(), 
 
     ],
     ), 
@@ -66,11 +66,44 @@ ImageListView(),
            Text('Change the Quality of Your \nAppearance With Essentials',
            style: kNormalStyle.copyWith(fontSize: 15, color: Colors.grey,
             height: 1.3), textAlign: TextAlign.center,),
+
+            const SizedBox(height: 30,), 
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: buildIndicators(), 
+            // )
         ],
       ),
       )          
         
-      )
+      ), 
+
+      // bottom button
+      Positioned(
+        bottom: 90, 
+        left: 20, 
+        right: 20, 
+        child: SizedBox(
+          height: 60, 
+          child: ElevatedButton(
+          
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.black, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))),
+            onPressed: (){},
+       child: const Text('Create Account', style: TextStyle(color: Colors.white),)),)), 
+
+         Positioned(
+        bottom: 20, 
+        left: 20, 
+        right: 20, 
+        child: SizedBox(
+          height: 60, 
+          child: OutlinedButton(
+            style: OutlinedButton.styleFrom(
+              side: const BorderSide(width: 2, color: Colors.blueGrey), 
+               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))),
+            onPressed: (){},
+       child: const Text('Login ', style: TextStyle(color: Colors.black),)),))
+
     ]));
   }
 }
