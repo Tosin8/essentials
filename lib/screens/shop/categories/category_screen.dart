@@ -1,5 +1,7 @@
-import 'package:essentials/screens/shop/categories/widgets/category_model.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
+import 'package:essentials/screens/shop/categories/widgets/category_model.dart';
 
 class CategoryScreen extends StatelessWidget {
   const CategoryScreen({super.key});
@@ -15,7 +17,7 @@ class CategoryScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        child: ProductCard(),
+        child: ProductCard(categories: categories),
       )
 
     );
@@ -24,8 +26,10 @@ class CategoryScreen extends StatelessWidget {
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
-    super.key, this.title, this.subTitle, this.image,
-  });
+    Key? key,
+     this.title, this.subTitle, this.image,
+    required this.categories,
+  }) : super(key: key);
 
 final CategoryScreen categories; 
 final title; 
