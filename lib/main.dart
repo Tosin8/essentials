@@ -33,9 +33,9 @@ class MyApp extends StatelessWidget {
         //   initialData: null,
         // ),
        
-    //  ChangeNotifierProvider<ThemeProvider>(
-    //       create: (_) => ThemeProvider(),
-    //     ),
+     ChangeNotifierProvider<ThemeProvider>(
+         create: (_) => ThemeProvider(),
+        ),
 
   // StreamProvider<User?>.value(
   //         value: AuthService().authStateChanges,
@@ -61,7 +61,7 @@ class MyApp extends StatelessWidget {
         // ],
       home: SplashScreen(), 
      // home: const AuthGate(), 
-     //  theme: Provider.of<ThemeProvider>(context).themeData,
+      theme: themeProvider.getTheme(),
    //initialRoute: '/',
         routes: {
          // '/': (context) => SplashScreen(),
