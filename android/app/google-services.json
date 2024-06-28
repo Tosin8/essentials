@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "938358879483",
+    "project_id": "essentials-14dde",
+    "storage_bucket": "essentials-14dde.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938358879483:android:5c0705f84a4074e6b0ac5e",
+        "android_client_info": {
+          "package_name": "com.example.essentials"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtUF8A5nf_gtO_GAahunpEpPOd2J76An4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
