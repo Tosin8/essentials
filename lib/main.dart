@@ -32,10 +32,12 @@ class MyApp extends StatelessWidget {
         //   create: (context) => context.read<AuthService>().authStateChanges,
         //   initialData: null,
         // ),
-       
-     ChangeNotifierProvider<ThemeProvider>(
-         create: (_) => ThemeProvider(),
-        ),
+       ChangeNotifierProvider<ThemeProvider>(
+         create: (_) => ThemeProvider(ThemeData.light()),
+       ),
+    //  ChangeNotifierProvider<ThemeProvider>(
+    //      create: (_) => ThemeProvider(),
+    //     ),
 
   // StreamProvider<User?>.value(
   //         value: AuthService().authStateChanges,
@@ -59,12 +61,12 @@ class MyApp extends StatelessWidget {
         //   GlobalWidgetsLocalizations.delegate,
         //   GlobalCupertinoLocalizations.delegate,
         // ],
-      home: SplashScreen(), 
+      home: const SplashScreen(), 
      // home: const AuthGate(), 
       theme: themeProvider.getTheme(),
    //initialRoute: '/',
         routes: {
-         // '/': (context) => SplashScreen(),
+        '/': (context) => const SplashScreen(),
        //  '/': (context) => const AuthWrapper(),
           '/home': (context) => const HomeScreen(),
           '/signup': (context) =>  const SignUpScreen(),
@@ -92,7 +94,7 @@ class AuthWrapper extends StatelessWidget {
     if (user != null) {
       return const HomeScreen();
     } else {
-      return LoginScreen();
+      return const LoginScreen();
     }
   }
 }
