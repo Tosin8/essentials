@@ -2,6 +2,8 @@ import 'package:essentials/firebase_options.dart';
 import 'package:essentials/screens/form/login.dart';
 import 'package:essentials/screens/form/signup.dart';
 import 'package:essentials/screens/home.dart';
+import 'package:essentials/services/auth/auth_services.dart';
+import 'package:essentials/theme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
