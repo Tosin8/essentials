@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../constant/widgets/social_btn.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -20,6 +22,11 @@ class _LoginScreenState extends State<LoginScreen> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
+        leading:  IconButton(
+          onPressed: () {
+            Navigator.pop(context); 
+          }, 
+         icon: Icon(  Iconsax.close_circle, size: 30, color: Colors.black,),), 
         actions: const [
           Text('Essential', 
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),), 
@@ -120,8 +127,18 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   // social icons. 
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center, 
+                    
                     children: [
-                      SocialBtn()
+                      SocialBtn(
+                        onTap: () {}, 
+                        socialicons: fb_icon, 
+                      ), 
+                      SizedBox(width: 20,), 
+                      SocialBtn(
+                        onTap: () {}, 
+                        socialicons: google_icon, 
+                      ), 
                     ],
                   )
                     

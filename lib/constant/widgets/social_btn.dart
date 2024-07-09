@@ -11,7 +11,7 @@ class SocialBtn extends StatelessWidget {
   });
 
 VoidCallback? onTap;
-Image socialicons; 
+String socialicons; 
   @override
   Widget build(BuildContext context) {
     return GestureDetector( 
