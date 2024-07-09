@@ -1,10 +1,81 @@
+import 'package:essentials/constant/widgets/form_buttons.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
-class ForgotPassword extends StatelessWidget {
+class ForgotPassword extends StatefulWidget {
   const ForgotPassword({super.key});
 
   @override
+  State<ForgotPassword> createState() => _ForgotPasswordState();
+}
+
+class _ForgotPasswordState extends State<ForgotPassword> {
+
+  final formKey = GlobalKey<FormState>();
+  final emailController = TextEditingController();
+  @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+
+      appBar: AppBar(
+        automaticallyImplyLeading: false, 
+        leading: IconButton(onPressed: (){
+          Navigator.pop(context);
+        },
+         icon: const Icon(Iconsax.close_circle, 
+         size: 30, color: Colors.black,),),
+         actions: [
+          const Text('Essential', 
+          style: TextStyle(fontSize: 18,
+           fontWeight: FontWeight.bold,
+            color: Colors.black),), 
+          const SizedBox(width: 18,), 
+         ],
+      ), 
+    body: SingleChildScrollView(
+      child: Padding( 
+        padding: const EdgeInsets.only(left: 18.0, right: 18.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('Reset your Password', 
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),), 
+            const SizedBox(height: 10,),
+            const Text('Enter your registered email address to reset your password', 
+            style: TextStyle(fontSize: 18),), 
+            const SizedBox(height: 20,), 
+            TextField(
+              controller: emailController,
+              keyboardType: TextInputType.emailAddress,
+              textInputAction: TextInputAction.done,
+              decoration: InputDecoration(
+                prefixIcon: const Icon(Iconsax.message, 
+                color: Colors.black),
+                hintText: 'Email', 
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10), 
+                )
+              ),
+            ), 
+            const SizedBox(height: 20,),
+            // Center(
+            //   child: ElevatedButton(onPressed: (){}, 
+            //   child: Text('Submit', 
+            //   style: TextStyle(fontSize: 18),), 
+            //   ),
+            // ),
+            Center(
+              child: FormButton(
+                text: 'Send me Link', 
+                onTap: (){
+                  if(formKey.currentState!.validate()){
+                    formKey.currentState!.save();}
+                },),
+            ), 
+          ],
+        ),
+      ),
+    ),
+    );
   }
 }

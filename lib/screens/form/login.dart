@@ -1,5 +1,6 @@
 import 'package:essentials/constant/widgets/form_buttons.dart';
 import 'package:essentials/constant/images.dart';
+import 'package:essentials/screens/form/resetpwd.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -15,6 +16,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+  final formkey = GlobalKey<FormState>();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold( 
@@ -26,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
           onPressed: () {
             Navigator.pop(context); 
           }, 
-         icon: Icon(  Iconsax.close_circle, size: 30, color: Colors.black,),), 
+         icon: const Icon(  Iconsax.close_circle, size: 30, color: Colors.black,),), 
         actions: const [
           Text('Essential', 
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),), 
@@ -50,13 +55,14 @@ class _LoginScreenState extends State<LoginScreen> {
               
               const Text('Email Address', style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w400),),
         const SizedBox(height: 10,), 
-              const TextField(
+              TextField(
+                controller: emailController,
                 keyboardType: TextInputType.emailAddress,
                 textInputAction: TextInputAction.next,
                 //controller: TextEditingController(),
                 
         
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   errorBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10),
                     ), 
@@ -76,14 +82,15 @@ class _LoginScreenState extends State<LoginScreen> {
               const Text('Password', 
               style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w400),),
         const SizedBox(height: 10,),
-              const TextField(
+              TextField(
+                controller: passwordController,
                 obscureText: true,
                 keyboardType: TextInputType.visiblePassword,
                 textInputAction: TextInputAction.done,
                 //controller: TextEditingController(),
                 
         
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   errorBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10),
                     ), 
@@ -106,6 +113,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 alignment: Alignment.centerRight,
                 child: GestureDetector(
                   onTap: () {
+                    showModalBottomSheet(context: context,
+                    isScrollControlled: true,
+                     builder: (BuildContext context){
+                      return const FractionallySizedBox(
+                        heightFactor: 0.4,
+                        child: ForgotPassword(),
+                      );
+                     });
                     print('Forgot Password');
                   },
                   child: const Text('Forgot Password'))),
@@ -134,7 +149,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         onTap: () {}, 
                         socialicons: fb_icon, 
                       ), 
-                      SizedBox(width: 20,), 
+                      const SizedBox(width: 20,), 
                       SocialBtn(
                         onTap: () {}, 
                         socialicons: google_icon, 
