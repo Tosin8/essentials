@@ -1,4 +1,5 @@
-import 'package:essentials/constant/form_buttons.dart';
+import 'package:essentials/constant/widgets/form_buttons.dart';
+import 'package:essentials/constant/images.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -120,12 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   // social icons. 
                   Row(
                     children: [
-                      Container(
-decoration: BoxDecoration(
-  shape: BoxShape.circle,
-),
-child: Image.asset(facebook_icon),
-                      )
+                      SocialBtn()
                     ],
                   )
                     
@@ -137,3 +133,4 @@ child: Image.asset(facebook_icon),
     );
   }
 }
+
