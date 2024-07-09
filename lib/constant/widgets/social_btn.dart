@@ -15,14 +15,12 @@ Image socialicons;
   @override
   Widget build(BuildContext context) {
     return GestureDetector( 
-      onTap: () {
-        
-      },
+      onTap: onTap, 
       child: Container(
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
       ),
-      child: Image.asset(fb_icon, height: 50, width: 50,),
+      child: Image.asset(socialicons, height: 50, width: 50,),
       ),
     );
   }
