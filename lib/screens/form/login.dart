@@ -30,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
         actions: const [
           Text('Essential', 
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),), 
-          SizedBox(width: 12,), 
+          SizedBox(width: 18,), 
         ],
       ),
       body:  SingleChildScrollView(
