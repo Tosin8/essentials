@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
         //   GlobalWidgetsLocalizations.delegate,
         //   GlobalCupertinoLocalizations.delegate,
         // ],
-      home: const SplashScreen(), 
+    //  home: const SplashScreen(), 
      // home: const AuthGate(), 
       theme: themeProvider.getTheme(),
    initialRoute: '/',
