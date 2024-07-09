@@ -102,7 +102,26 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: const Text('Forgot Password'))),
         const SizedBox(height: 50,), 
                   // Btn. 
-                  FormButton(),  
+                  FormButton(
+                    onTap: () {
+                      
+                    },
+                    text: 'Login',
+                  ),  
+
+                  const SizedBox(height: 20,),
+                 
+                      const Center(child: Text('-  or login with   - ', 
+                      style: TextStyle(color: Colors.grey, fontSize: 15),)), 
+
+                  const SizedBox(height: 20,),
+
+                  // social icons. 
+                  const Row(
+                    children: [],
+                  )
+                    
+                  
             ],
           ),
         ),

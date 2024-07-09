@@ -3,16 +3,20 @@
 import 'package:flutter/material.dart';
 
 class FormButton extends StatelessWidget {
-  const FormButton({
+
+  final VoidCallback onTap;
+final String text; 
+   const FormButton({
+    required this.text, required this.onTap, 
     super.key,
   });
+
+
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector( 
-      onTap: () {
-        
-      },
+      onTap: onTap, 
       child: Container(
         width: double.infinity, 
         height: 50,
@@ -20,7 +24,7 @@ class FormButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           color: Colors.black, 
         ),
-        child: const Align(child: Text('Login ', style: TextStyle(color: Colors.white, fontSize: 20),)),
+        child:  Align(child: Text(text, style: TextStyle(color: Colors.white, fontSize: 20),)),
       ),
     );
   }
