@@ -36,6 +36,7 @@ dependencies:
   firebase_ui_firestore: ^1.6.4
   flutter:
     sdk: flutter
+  iconsax: ^0.0.8
   provider: ^6.1.2
   shimmer: ^3.0.0
 
