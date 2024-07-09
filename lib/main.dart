@@ -6,6 +6,7 @@ import 'package:essentials/services/auth/auth_services.dart';
 import 'package:essentials/theme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
