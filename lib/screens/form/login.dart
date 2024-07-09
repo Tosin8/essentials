@@ -1,4 +1,5 @@
 import 'package:essentials/constant/form_buttons.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
@@ -117,8 +118,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(height: 20,),
 
                   // social icons. 
-                  const Row(
-                    children: [],
+                  Row(
+                    children: [
+                      Container(
+decoration: BoxDecoration(
+  shape: BoxShape.circle,
+),
+child: Image.asset(facebook_icon),
+                      )
+                    ],
                   )
                     
                   
