@@ -29,10 +29,10 @@ class MyApp extends StatelessWidget {
         Provider<AuthService>(
           create: (_) => AuthService(),
         ),
-        // StreamProvider<User?>(
-        //   create: (context) => context.read<AuthService>().authStateChanges,
-        //   initialData: null,
-        // ),
+        StreamProvider<User?>(
+          create: (context) => context.read<AuthService>().authStateChanges,
+          initialData: null,
+        ),
        ChangeNotifierProvider<ThemeProvider>(
          create: (_) => ThemeProvider(ThemeData.light()),
        ),
@@ -65,10 +65,10 @@ class MyApp extends StatelessWidget {
       home: const SplashScreen(), 
      // home: const AuthGate(), 
       theme: themeProvider.getTheme(),
-   //initialRoute: '/',
+   initialRoute: '/',
         routes: {
-        '/': (context) => const SplashScreen(),
-       //  '/': (context) => const AuthWrapper(),
+       // '/': (context) => const SplashScreen(),
+        '/': (context) => const AuthWrapper(),
           '/home': (context) => const HomeScreen(),
           '/signup': (context) =>  const SignUpScreen(),
           '/login': (context) => const LoginScreen(),
@@ -95,7 +95,7 @@ class AuthWrapper extends StatelessWidget {
     if (user != null) {
       return const HomeScreen();
     } else {
-      return const LoginScreen();
+      return const SplashScreen();
     }
   }
 }
