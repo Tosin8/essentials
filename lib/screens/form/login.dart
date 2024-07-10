@@ -17,7 +17,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
 
-  final formkey = GlobalKey<FormState>();
+  final _formkey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   @override
@@ -42,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Padding(
           padding: const EdgeInsets.only(left: 18.0, right: 18.0),
           child: Form( 
-            key: formkey,
+            key: _formkey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -118,9 +118,17 @@ class _LoginScreenState extends State<LoginScreen> {
                       showModalBottomSheet(context: context,
                       isScrollControlled: true,
                        builder: (BuildContext context){
-                        return const FractionallySizedBox(
-                          heightFactor: 0.4,
-                          child: ForgotPassword(),
+                        // return const FractionallySizedBox(
+                        //   heightFactor: 0.4,
+                        return Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20),
+                          )
+                        ),
+                          height: 500,
+                          child: const ForgotPassword(),
                         );
                        });
                       print('Forgot Password');

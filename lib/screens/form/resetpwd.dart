@@ -15,34 +15,31 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   final emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
-      appBar: AppBar(
-        automaticallyImplyLeading: false, 
-        leading: IconButton(onPressed: (){
-          Navigator.pop(context);
-        },
-         icon: const Icon(Iconsax.close_circle, 
-         size: 30, color: Colors.black,),),
-         actions: [
-          const Text('Essential', 
-          style: TextStyle(fontSize: 18,
-           fontWeight: FontWeight.bold,
-            color: Colors.black),), 
-          const SizedBox(width: 18,), 
-         ],
-      ), 
-    body: SingleChildScrollView(
+    return 
+     SingleChildScrollView(
       child: Padding( 
         padding: const EdgeInsets.only(left: 18.0, right: 18.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Reset your Password', 
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),), 
+            SizedBox(height: 20,), 
+ Row(
+  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+   children: [
+   const Text('Reset your Password', 
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                IconButton(onPressed: (){
+      Navigator.pop(context); 
+    }, icon: Icon(Iconsax.close_circle, size: 20, color: Colors.black,)), 
+   ],
+ ), 
+ 
+
+ 
+             
             const SizedBox(height: 10,),
             const Text('Enter your registered email address to reset your password', 
-            style: TextStyle(fontSize: 18),), 
+            style: TextStyle(fontSize: 16),), 
             const SizedBox(height: 20,), 
             TextField(
               controller: emailController,
@@ -75,7 +72,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           ],
         ),
       ),
-    ),
+    
     );
   }
 }

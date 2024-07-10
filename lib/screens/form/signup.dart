@@ -27,7 +27,7 @@ void _showValidationOptions(BuildContext ocntext){
   showModalBottomSheet(context: context,
   
    builder: (BuildContext context) {
-    return _ValidationOptions(); 
+    return const _ValidationOptions(); 
    });
 }
   @override 
@@ -159,7 +159,7 @@ void _showValidationOptions(BuildContext ocntext){
                      ) ],
                     ), 
                  // Password
-                SizedBox(height: 15,), 
+                const SizedBox(height: 15,), 
                 const Text('Password', 
                 style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w400),),
                     const SizedBox(height: 10,),
@@ -186,7 +186,7 @@ void _showValidationOptions(BuildContext ocntext){
                 ),
                     
                  //repeat Password
-                SizedBox(height: 15,), 
+                const SizedBox(height: 15,), 
                 const Text('Repeat Password', 
                 style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w400),),
                     const SizedBox(height: 10,),
@@ -213,7 +213,7 @@ void _showValidationOptions(BuildContext ocntext){
                 ),
                     
             // phone number formfield
-            SizedBox(height: 15,),
+            const SizedBox(height: 15,),
         
 const Text('Phone Number', 
                 style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w400),),
@@ -240,7 +240,7 @@ const Text('Phone Number',
                   ),
                 ),
             // address formfield
-            SizedBox(height: 15,),
+            const SizedBox(height: 15,),
         
 const Text('Address', 
                 style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w400),),
@@ -303,7 +303,7 @@ const Text('Address',
                       ],
                     ), 
                       
-                    SizedBox(height: 20,),
+                    const SizedBox(height: 20,),
               ],
             ),
           ),
@@ -345,18 +345,18 @@ print('No Validation Selected');
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 5,), 
+          const SizedBox(height: 5,), 
           Padding(
-            padding: EdgeInsets.only(left: 15),
+            padding: const EdgeInsets.only(left: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Choose an option \nto validate your account', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                const Text('Choose an option \nto validate your account', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
                 const SizedBox(width: 15,),
                 IconButton(onPressed: (){
                   Navigator.pop(context);
                 },
-                 icon: Icon(Iconsax.close_circle, size: 20, color: Colors.black,),),
+                 icon: const Icon(Iconsax.close_circle, size: 20, color: Colors.black,),),
               ],
             )), 
           Row(
@@ -391,7 +391,7 @@ print('No Validation Selected');
               const Text('Use Phone Number'),
             ],
           ), 
-SizedBox(height: 20,),
+const SizedBox(height: 20,),
           // ElevatedButton(onPressed: _validate, child: const Text('Validate')),
           FormButton(text: 'Validate Me',
            onTap: _validate), 
