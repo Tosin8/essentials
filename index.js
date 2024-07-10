@@ -1,10 +1,49 @@
+const express = require('express');
+
+
+
 const mongoose = require('mongoose'); 
+
+const app = express();
+ const port = 3000;
+ app.use(bodyParser.json());
 
 mongoose.connect('mongodb+srv://tosinezekiel8:zRd4MNhvkOwXkphs@essential.a6vjkc5.mongodb.net/?retryWrites=true&w=majority&appName=essential'); 
 
 const db = mongoose.connection.db;
 db.on('error', (error) => console.error(error));
-db.once('open', () => console.log('Connected to MongoDB'));
+db.once('open', () => console.log('Connected to MongoDB Database'));
+
+app.delete('/:id', async (req, res) => {
+  const  id  = req.params.id;
+  await UserActivation.findByIdAndDelete(id);
+
+});  
+
+app.listen(port,  () => {
+  console.log(`Server is unning on:${port}`);
+});
+
+const {Schema, model} = mongoose; 
+const userSchema = new Schema({
+  name: String,
+  email: String,
+  password: String
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /// Sample from official MongoDB documentation
 // const { MongoClient } = require("mongodb");
@@ -30,3 +69,4 @@ db.once('open', () => console.log('Connected to MongoDB'));
 //   }
 // }
 // run().catch(console.dir);
+
