@@ -1,9 +1,10 @@
 import 'package:essentials/screens/constant.dart';
 import 'package:essentials/screens/form/login.dart';
+import 'package:essentials/screens/form/signup.dart';
 import 'package:essentials/screens/splash_screen/widgets/image_list_view.dart';
 import 'package:flutter/material.dart';
 
-import '../shop/categories/category_screen.dart';
+
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -91,7 +92,10 @@ ImageListView(startIndex: 2),
           child: ElevatedButton(
           
             style: ElevatedButton.styleFrom(backgroundColor: Colors.black, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))),
-            onPressed: (){},
+            onPressed: (){
+              Navigator.push(context, 
+              MaterialPageRoute(builder: (context) => const SignUpScreen()));
+            },
        child: const Text('Create Account', style: TextStyle(color: Colors.white),)),)), 
 
          Positioned(
