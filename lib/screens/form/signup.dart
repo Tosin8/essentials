@@ -13,7 +13,7 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
 
-  final formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
   final firstNameController = TextEditingController();
   final lastNameController = TextEditingController();
   final emailController = TextEditingController();
@@ -23,7 +23,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final addressController = TextEditingController();
 
 
-  @override
+void _showValidationOptions(BuildContext ocntext){
+  showModalBottomSheet(context: context,
+  
+   builder: (BuildContext context) {
+    return _ValidationOptions(); 
+   });
+}
+  @override 
   Widget build(BuildContext context) {
     return Scaffold( 
       backgroundColor: Colors.white,
@@ -46,7 +53,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         child: Padding(
           padding: const EdgeInsets.only(left: 18.0, right: 18.0),
           child: Form(
-            key: formKey,
+            key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -205,13 +212,69 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
                     
+            // phone number formfield
+            SizedBox(height: 15,),
+        
+const Text('Phone Number', 
+                style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w400),),
+                    const SizedBox(height: 10,),
+                TextField(
+                  controller: phoneNumberController,
+              
+                  keyboardType: TextInputType.number, 
+                  textInputAction: TextInputAction.next,
+                  decoration: const InputDecoration(
+                    errorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10),
+                      ), 
+                      ),
+                    prefixIcon: Icon(Iconsax.mobile,  color: Colors.black,),
+                    
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)), 
+                      
+                    ),
+                    
+                    hintStyle: TextStyle(fontSize: 16, 
+                    color: Colors.black, fontWeight: FontWeight.w400),
+                  ),
+                ),
+            // address formfield
+            SizedBox(height: 15,),
+        
+const Text('Address', 
+                style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w400),),
+                    const SizedBox(height: 10,),
+                TextField(
+                  controller: addressController,
+              
+                  keyboardType: TextInputType.text, 
+                  textInputAction: TextInputAction.next,
+                  decoration: const InputDecoration(
+                    errorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10),
+                      ), 
+                      ),
+                    prefixIcon: Icon(Iconsax.home,  color: Colors.black,),
+                    
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)), 
+                      
+                    ),
+                    
+                    hintStyle: TextStyle(fontSize: 16, 
+                    color: Colors.black, fontWeight: FontWeight.w400),
+                  ),
+                ),
                 
                 
                     const SizedBox(height: 50,), 
                     // Btn. 
                     FormButton(
                       onTap: () {
-                        
+                        if(_formKey.currentState!.validate() == true){
+                          _showValidationOptions(context);
+                        }
                       },
                       text: 'Create Account',
                     ),  
@@ -238,13 +301,101 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           socialicons: google_icon, 
                         ), 
                       ],
-                    )
+                    ), 
                       
-                    
+                    SizedBox(height: 20,),
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+
+class _ValidationOptions extends StatefulWidget {
+  const _ValidationOptions({super.key});
+
+  @override
+  State<_ValidationOptions> createState() => __ValidationOptionsState();
+}
+
+class __ValidationOptionsState extends State<_ValidationOptions> {
+  bool _validateByEmail = false;
+  bool _validateByPhone = false;
+
+  void _validate(){
+    if (_validateByEmail) {
+print('Email Validation Selected'); 
+// add email validation logic here
+    } else if (_validateByPhone) {
+print('Phone Number Validation Selected'); 
+// add phone number validation logic here
+    } else {
+print('No Validation Selected'); 
+// add no validation logic here
+    }
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(15.0),
+      height: 250, 
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 5,), 
+          Padding(
+            padding: EdgeInsets.only(left: 15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Choose an option \nto validate your account', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                const SizedBox(width: 15,),
+                IconButton(onPressed: (){
+                  Navigator.pop(context);
+                },
+                 icon: Icon(Iconsax.close_circle, size: 20, color: Colors.black,),),
+              ],
+            )), 
+          Row(
+            children: [
+              Checkbox(
+                value: _validateByEmail,
+                onChanged: (bool? value) {
+                  setState(() {
+                    _validateByEmail = value ?? false;
+                    if(_validateByEmail) {
+                      _validateByPhone = false;
+                    }
+                  });
+                },
+              ),
+              const Text('Use Email'),
+            ]), 
+
+          Row(
+            children: [
+              Checkbox(
+                value: _validateByPhone,
+                onChanged: (bool? value) {
+                  setState(() {
+                    _validateByPhone = value ?? false;
+                    if(_validateByPhone) {
+                      _validateByEmail = false;
+                    }
+                  });
+                },
+              ),
+              const Text('Use Phone Number'),
+            ],
+          ), 
+SizedBox(height: 20,),
+          // ElevatedButton(onPressed: _validate, child: const Text('Validate')),
+          FormButton(text: 'Validate Me',
+           onTap: _validate), 
+        ],
       ),
     );
   }
