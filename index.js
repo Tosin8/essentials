@@ -17,6 +17,7 @@ db.once('open', () => console.log('Connected to MongoDB Database'));
 app.delete('/:id', async (req, res) => {
   const  id  = req.params.id;
   await UserActivation.findByIdAndDelete(id);
+  res.json('Deleted Sucessfully'); 
 
 });  
 
@@ -29,8 +30,8 @@ const userSchema = new Schema({
   name: String,
   email: String,
   password: String
-})
-
+});
+const User = model('User', userSchema);
 
 
 
