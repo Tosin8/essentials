@@ -140,7 +140,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     // Btn. 
                     FormButton(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) =>  BottomNav()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) =>  const BottomNav()));
                       },
                       text: 'Login',
                     ),  

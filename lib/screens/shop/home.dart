@@ -24,7 +24,8 @@ appBar: PreferredSize(
   title: Text('Essentials',), 
   actions: [
     IconButton(onPressed: (){}, 
-    icon: Icon(Iconsax.notification, color: Colors.black,))
+    icon: Icon(Iconsax.notification,
+     color: Colors.black,))
   ],)),
         body: Padding(
           padding: const EdgeInsets.all(18.0),

@@ -1,5 +1,6 @@
 import 'package:essentials/screens/shop/categories/category.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 import 'cart.dart';
 import 'home.dart';
@@ -8,6 +9,8 @@ import 'saveitem.dart';
 
 
 class BottomNav extends StatefulWidget {
+  const BottomNav({super.key});
+
   @override
   _BottomNavState createState() => _BottomNavState();
 }
@@ -63,23 +66,23 @@ class _BottomNavState extends State<BottomNav> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
-                    icon: const Icon(Icons.home),
+                    icon: const Icon(Iconsax.home),
                     color: _selectedIndex == 0 ? Colors.grey : Colors.white,
                     onPressed: () => _onItemTapped(0),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.category),
+                    icon: const Icon(Iconsax.category),
                     color: _selectedIndex == 1 ? Colors.grey : Colors.white,
                     onPressed: () => _onItemTapped(1),
                   ),
                   const SizedBox(width: 40), // Space for FAB
                   IconButton(
-                    icon: const Icon(Icons.save),
+                    icon: const Icon(Iconsax.bookmark),
                     color: _selectedIndex == 3 ? Colors.grey : Colors.white,
                     onPressed: () => _onItemTapped(3),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.account_circle),
+                    icon: const Icon(Iconsax.user),
                     color: _selectedIndex == 4 ? Colors.grey : Colors.white,
                     onPressed: () => _onItemTapped(4),
                   ),
