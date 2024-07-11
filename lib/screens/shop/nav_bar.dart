@@ -1,6 +1,5 @@
 
 
-
 import 'package:flutter/material.dart';
 
 class BottomNav extends StatefulWidget {
@@ -10,14 +9,7 @@ class BottomNav extends StatefulWidget {
 
 class _BottomNavState extends State<BottomNav> {
   int _selectedIndex = 0;
-
-  final List<GlobalKey<NavigatorState>> _navigatorKeys = [
-    GlobalKey<NavigatorState>(),
-    GlobalKey<NavigatorState>(),
-    GlobalKey<NavigatorState>(),
-    GlobalKey<NavigatorState>(),
-    GlobalKey<NavigatorState>(),
-  ];
+  PageController _pageController = PageController();
 
   static const List<Widget> _pages = <Widget>[
     HomeScreen(key: PageStorageKey('HomeScreen')),
@@ -30,6 +22,7 @@ class _BottomNavState extends State<BottomNav> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      _pageController.jumpToPage(index);
     });
   }
 
@@ -38,60 +31,64 @@ class _BottomNavState extends State<BottomNav> {
     return Scaffold(
       body: Stack(
         children: [
-          IndexedStack(
-            index: _selectedIndex,
+          PageView(
+            controller: _pageController,
+            physics: NeverScrollableScrollPhysics(),
             children: _pages,
           ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30.0),
+                child: BottomNavigationBar(
+                  backgroundColor: Colors.black,
+                  type: BottomNavigationBarType.fixed,
+                  items: const <BottomNavigationBarItem>[
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.home),
+                      label: 'Home',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.category),
+                      label: 'Category',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.save),
+                      label: 'Save Item',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.account_circle),
+                      label: 'Account',
+                    ),
+                  ],
+                  currentIndex: _selectedIndex,
+                  selectedItemColor: Colors.grey,
+                  unselectedItemColor: Colors.white,
+                  selectedIconTheme: IconThemeData(size: 30),
+                  unselectedIconTheme: IconThemeData(size: 24),
+                  onTap: _onItemTapped,
+                ),
+              ),
+            ),
+          ),
           Positioned(
-            left: 0,
-            right: 0,
-            bottom: 0,
-            child: ClipRRect(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30.0),
-                topRight: Radius.circular(30.0),
-              ),
-              child: BottomNavigationBar(
-                backgroundColor: Colors.black,
-                type: BottomNavigationBarType.fixed,
-                items: const <BottomNavigationBarItem>[
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.home),
-                    label: 'Home',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.category),
-                    label: 'Category',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.save),
-                    label: 'Save Item',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.account_circle),
-                    label: 'Account',
-                  ),
-                ],
-                currentIndex: _selectedIndex,
-                selectedItemColor: Colors.grey,
-                unselectedItemColor: Colors.white,
-                selectedIconTheme: IconThemeData(size: 30),
-                unselectedIconTheme: IconThemeData(size: 24),
-                onTap: _onItemTapped,
-              ),
+            bottom: 80.0, // Adjust the position as needed
+            left: MediaQuery.of(context).size.width / 2 - 30, // Adjust for the size of FAB
+            child: FloatingActionButton(
+              onPressed: () {
+                setState(() {
+                  _selectedIndex = 2; // Navigate to Cart page
+                  _pageController.jumpToPage(2);
+                });
+              },
+              child: Icon(Icons.shopping_cart),
             ),
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            _selectedIndex = 2; // Navigate to Cart page
-          });
-        },
-        child: Icon(Icons.shopping_cart),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
     );
   }
 }
