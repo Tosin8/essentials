@@ -13,9 +13,18 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Scaffold(
 
-        body: const Center( 
-      
-      )
+        body: Padding(
+          padding: const EdgeInsets.all(18.0),
+          child: Column(
+            children: [
+              
+              Text('Essential', 
+              style: TextStyle(fontSize: 18, 
+              fontWeight: FontWeight.bold),)
+            ], 
+                
+                ),
+        )
     ));
   }
 }
