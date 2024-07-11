@@ -1,57 +1,14 @@
+
+
+
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 class BottomNav extends StatefulWidget {
-  const BottomNav({super.key});
-
   @override
-  State<BottomNav> createState() => _BottomNavState();
+  _BottomNavState createState() => _BottomNavState();
 }
 
 class _BottomNavState extends State<BottomNav> {
-  int index = 0; 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: NavigationBar(
-        height: 60, selectedIndex: index,
-onDestinationSelected: (index) => setState(() => this.index = index),
-destinations: [
-  NavigationDestination(icon: Icon(Iconsax.home), label: 'home'),
-],
-      ),
-    );
-  }
-}
-
-
-
-import 'package:flutter/material.dart';
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MainPage(),
-    );
-  }
-}
-
-class MainPage extends StatefulWidget {
-  @override
-  _MainPageState createState() => _MainPageState();
-}
-
-class _MainPageState extends State<MainPage> {
   int _selectedIndex = 0;
 
   final List<GlobalKey<NavigatorState>> _navigatorKeys = [
