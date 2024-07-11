@@ -84,7 +84,7 @@ ImageListView(startIndex: 2),
 
       // bottom button
       Positioned(
-        bottom: 90, 
+        bottom: 120, 
         left: 20, 
         right: 20, 
         child: SizedBox(
@@ -99,7 +99,7 @@ ImageListView(startIndex: 2),
        child: const Text('Create Account', style: TextStyle(color: Colors.white),)),)), 
 
          Positioned(
-        bottom: 20, 
+        bottom: 50, 
         left: 20, 
         right: 20, 
         child: SizedBox(
@@ -112,7 +112,12 @@ ImageListView(startIndex: 2),
               Navigator.push(context, 
               MaterialPageRoute(builder: (context) => const LoginScreen()));
             },
-       child: const Text('Login ', style: TextStyle(color: Colors.black),)),))
+       child: const Text('Login ',
+        style: TextStyle(color: Colors.black),
+        )),
+        )),
+
+   //   SizedBox(height: 5,), 
 
     ]));
   }
