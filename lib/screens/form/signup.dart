@@ -23,7 +23,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final addressController = TextEditingController();
 
 
-void _showValidationOptions(BuildContext ocntext){
+void _showValidationOptions(BuildContext context){
   showModalBottomSheet(context: context,
   
    builder: (BuildContext context) {
