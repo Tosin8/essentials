@@ -16,26 +16,41 @@ appBar: PreferredSize(
   title: const Text('Category',), 
   ), 
   ),
-  body: Column(
-    children: [
-      Container(
-decoration: const BoxDecoration(
-  image: DecorationImage(
-    image: NetworkImage('https://unsplash.com/photos/assorted-color-shirt-hanging-beside-wall-DqJMxq5ZDqA'),
-     fit: BoxFit.cover), 
-),
-child: Container(
-  decoration: BoxDecoration(
-    gradient: LinearGradient(colors:[
-      Colors.black, Colors.transparent, Colors.transparent
-    ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
-  ),
-  child: Image.network('https://unsplash.com/photos/assorted-color-shirt-hanging-beside-wall-DqJMxq5ZDqA'),
-  
-  ),
-),
-      
-    ],
+  body: Padding(
+    padding: const EdgeInsets.all(15.0),
+    child: Column(
+      children: [
+        Container(
+          
+          width: double.infinity, 
+           height: 200,
+    decoration:  BoxDecoration(
+      borderRadius: BorderRadius.circular(15),
+    image: const DecorationImage(
+       image: AssetImage('assets/images/category/1.jpg'),
+    
+       fit: BoxFit.cover), 
+    ),
+    child: Container(
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(15),
+      gradient: const LinearGradient(colors:[
+        Colors.black, Colors.transparent, Colors.transparent
+      ], begin: Alignment.bottomCenter, end: Alignment.topCenter),
+    ),
+     child: const Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('Clothes', style: TextStyle(color: Colors.white, fontSize: 18),)
+      ],
+     ),
+    
+    ),
+    ),
+        
+      ],
+    ),
   ),
   ), 
 );
