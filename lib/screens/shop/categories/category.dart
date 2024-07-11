@@ -21,7 +21,8 @@ appBar: PreferredSize(
       Container(
 decoration: const BoxDecoration(
   image: DecorationImage(
-    image: NetworkImage('https://unsplash.com/photos/assorted-color-shirt-hanging-beside-wall-DqJMxq5ZDqA'), fit: BoxFit.cover), 
+    image: NetworkImage('https://unsplash.com/photos/assorted-color-shirt-hanging-beside-wall-DqJMxq5ZDqA'),
+     fit: BoxFit.cover), 
 ),
 child: Container(
   decoration: BoxDecoration(
@@ -29,9 +30,11 @@ child: Container(
       Colors.black, Colors.transparent, Colors.transparent
     ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
   ),
-  child: Text('Clothes', textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),),
+  child: Image.network('https://unsplash.com/photos/assorted-color-shirt-hanging-beside-wall-DqJMxq5ZDqA'),
+  
+  ),
 ),
-      )
+      
     ],
   ),
   ), 
