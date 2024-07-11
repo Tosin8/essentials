@@ -13,18 +13,19 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-appBar: AppBar(
+
+
+appBar: PreferredSize(
+  
+  preferredSize: Size.fromHeight(50),
+ child: 
+ AppBar(
   automaticallyImplyLeading: false,
-  title: Text('Essentials', 
-  style: TextStyle(
-    fontWeight: FontWeight.bold
-  ),), 
-  centerTitle: true,
+  title: Text('Essentials',), 
   actions: [
     IconButton(onPressed: (){}, 
     icon: Icon(Iconsax.notification, color: Colors.black,))
-  ],
-),
+  ],)),
         body: Padding(
           padding: const EdgeInsets.all(18.0),
           child: Column(
