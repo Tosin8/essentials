@@ -1,6 +1,7 @@
 import 'package:essentials/constant/widgets/form_buttons.dart';
 import 'package:essentials/constant/images.dart';
 import 'package:essentials/screens/form/resetpwd.dart';
+import 'package:essentials/screens/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -121,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         // return const FractionallySizedBox(
                         //   heightFactor: 0.4,
                         return Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(20),
                             topRight: Radius.circular(20),
@@ -138,7 +139,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     // Btn. 
                     FormButton(
                       onTap: () {
-                        
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
                       },
                       text: 'Login',
                     ),  
