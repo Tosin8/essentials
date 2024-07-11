@@ -339,64 +339,66 @@ print('No Validation Selected');
   }
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(15.0),
-      height: 250, 
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 5,), 
-          Padding(
-            padding: const EdgeInsets.only(left: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return 
+    Container(
+        padding: const EdgeInsets.all(15.0),
+        height: 280, 
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 5,), 
+            Padding(
+              padding: const EdgeInsets.only(left: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text('Choose an option \nto validate your account', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                  const SizedBox(width: 15,),
+                  IconButton(onPressed: (){
+                    Navigator.pop(context);
+                  },
+                   icon: const Icon(Iconsax.close_circle, size: 20, color: Colors.black,),),
+                ],
+              )), 
+            Row(
               children: [
-                const Text('Choose an option \nto validate your account', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
-                const SizedBox(width: 15,),
-                IconButton(onPressed: (){
-                  Navigator.pop(context);
-                },
-                 icon: const Icon(Iconsax.close_circle, size: 20, color: Colors.black,),),
+                Checkbox(
+                  value: _validateByEmail,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      _validateByEmail = value ?? false;
+                      if(_validateByEmail) {
+                        _validateByPhone = false;
+                      }
+                    });
+                  },
+                ),
+                const Text('Use Email'),
+              ]), 
+      
+            Row(
+              children: [
+                Checkbox(
+                  value: _validateByPhone,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      _validateByPhone = value ?? false;
+                      if(_validateByPhone) {
+                        _validateByEmail = false;
+                      }
+                    });
+                  },
+                ),
+                const Text('Use Phone Number'),
               ],
-            )), 
-          Row(
-            children: [
-              Checkbox(
-                value: _validateByEmail,
-                onChanged: (bool? value) {
-                  setState(() {
-                    _validateByEmail = value ?? false;
-                    if(_validateByEmail) {
-                      _validateByPhone = false;
-                    }
-                  });
-                },
-              ),
-              const Text('Use Email'),
-            ]), 
-
-          Row(
-            children: [
-              Checkbox(
-                value: _validateByPhone,
-                onChanged: (bool? value) {
-                  setState(() {
-                    _validateByPhone = value ?? false;
-                    if(_validateByPhone) {
-                      _validateByEmail = false;
-                    }
-                  });
-                },
-              ),
-              const Text('Use Phone Number'),
-            ],
-          ), 
-const SizedBox(height: 20,),
-          // ElevatedButton(onPressed: _validate, child: const Text('Validate')),
-          FormButton(text: 'Validate Me',
-           onTap: _validate), 
-        ],
-      ),
+            ), 
+      const SizedBox(height: 20,),
+            // ElevatedButton(onPressed: _validate, child: const Text('Validate')),
+            FormButton(text: 'Validate Me',
+             onTap: _validate), 
+          ],
+        ),
+      
     );
   }
 }

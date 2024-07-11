@@ -41,6 +41,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             const Text('Enter your registered email address to reset your password', 
             style: TextStyle(fontSize: 16),), 
             const SizedBox(height: 20,), 
+            Text('Email Address',), 
+            SizedBox(height: 10,), 
             TextField(
               controller: emailController,
               keyboardType: TextInputType.emailAddress,
@@ -48,7 +50,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               decoration: InputDecoration(
                 prefixIcon: const Icon(Iconsax.message, 
                 color: Colors.black),
-                hintText: 'Email', 
+               // hintText: 'Email', 
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10), 
                 )
