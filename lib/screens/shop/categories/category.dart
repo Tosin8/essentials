@@ -5,8 +5,20 @@ class CategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Category Screen'),
-    );
+    return SafeArea(child: Scaffold( 
+appBar: PreferredSize(
+  
+  preferredSize: Size.fromHeight(50),
+ child: 
+ AppBar(
+  automaticallyImplyLeading: false,
+  title: Text('Category',), 
+  ), 
+  ),
+  body: Column(
+    children: [],
+  ),
+  ), 
+);
   }
 }

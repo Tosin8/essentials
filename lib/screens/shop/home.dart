@@ -17,18 +17,18 @@ class _HomeScreenState extends State<HomeScreen> {
 
 appBar: PreferredSize(
   
-  preferredSize: Size.fromHeight(50),
+  preferredSize: const Size.fromHeight(50),
  child: 
  AppBar(
   automaticallyImplyLeading: false,
-  title: Text('Essentials',), 
+  title: const Text('Essentials',), 
   actions: [
     IconButton(onPressed: (){}, 
-    icon: Icon(Iconsax.notification,
+    icon: const Icon(Iconsax.notification,
      color: Colors.black,))
   ],)),
-        body: Padding(
-          padding: const EdgeInsets.all(18.0),
+        body: const Padding(
+          padding: EdgeInsets.all(18.0),
           child: Column(
             children: [
               
