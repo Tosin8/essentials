@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'widgets/category_model.dart';
 
 class CategoryScreen extends StatelessWidget {
-  const CategoryScreen({Key? key}) : super(key: key);
+  const CategoryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
