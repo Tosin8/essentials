@@ -234,8 +234,9 @@ class CategoryScreen extends StatelessWidget {
 
 class CategoryListItem extends StatelessWidget {
   final CategoryModel category;
+  final GlobalKey _backgroundImageKey = GlobalKey();
 
-  const CategoryListItem({
+   CategoryListItem({
     Key? key,
     required this.category,
   }) : super(key: key);
@@ -253,7 +254,8 @@ class CategoryListItem extends StatelessWidget {
             delegate: ParallaxFlowDelegate(
               scrollable: Scrollable.of(context)!,
               listItemContext: context,
-              backgroundImage: category.image,
+             // backgroundImage: category.image,
+               backgroundImageKey: _backgroundImageKey,
             ),
             children: [
               Container(
@@ -261,6 +263,7 @@ class CategoryListItem extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                   image: DecorationImage(
                     image: category.image,
+                  
                     fit: BoxFit.cover,
                   ),
                 ),

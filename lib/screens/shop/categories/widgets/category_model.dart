@@ -5,6 +5,7 @@ class CategoryModel {
   final String subTitle;
   final ImageProvider image;
   final VoidCallback onTap;
+  final GlobalKey _backgroundImageKey = GlobalKey();
 
   CategoryModel({
     required this.title,
