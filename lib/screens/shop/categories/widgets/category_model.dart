@@ -1,16 +1,12 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-class CategoryScreen {
+class CategoryModel {
   final String title;
-  final String subTitle; 
-  ImageProvider image; 
- //final String image; 
-  VoidCallback onTap; 
-  final GlobalKey _backgroundImageKey = GlobalKey();
+  final String subTitle;
+  final ImageProvider image;
+  final VoidCallback onTap;
 
-  CategoryScreen({
+  CategoryModel({
     required this.title,
     required this.subTitle,
     required this.image,
@@ -18,51 +14,53 @@ class CategoryScreen {
   });
 }
 
-
-List categories =  [
-  CategoryScreen(
+List<CategoryModel> categories = [
+  CategoryModel(
     title: 'Clothes',
     subTitle: '100 Products',
-   // image: const AssetImage('assets/images/category/1.jpg'), 
-   image: const AssetImage('assets/images/category/1.jpg'),
-    onTap: () {  }, 
+    image: const AssetImage('assets/images/category/1.jpg'),
+    onTap: () {},
   ),
- CategoryScreen(
+  CategoryModel(
     title: 'Perfumes',
     subTitle: '60 Products',
-    image: AssetImage('assets/images/category/2.jpg'), 
-    onTap: () {  }, 
+    image: const AssetImage('assets/images/category/2.jpg'),
+    onTap: () {},
   ),
-  CategoryScreen(
+  CategoryModel(
     title: 'Shoes',
     subTitle: '152 Products',
-    image:  AssetImage('assets/images/category/3.jpg'),   
-    onTap: () {  }, 
+    image: const AssetImage('assets/images/category/3.jpg'),
+    onTap: () {},
   ),
-  CategoryScreen(
+  CategoryModel(
     title: 'Cosmetics',
     subTitle: '80 Products',
-    image: AssetImage('assets/images/category/4.jpg'), 
-    onTap: () {  }, 
-  ),CategoryScreen(
+    image: const AssetImage('assets/images/category/4.jpg'),
+    onTap: () {},
+  ),
+  CategoryModel(
     title: 'Sunglasses',
     subTitle: '100 Products',
-    image:  AssetImage('assets/images/category/5.jpg'), 
-    onTap: () {  }, 
-  ),CategoryScreen(
+    image: const AssetImage('assets/images/category/5.jpg'),
+    onTap: () {},
+  ),
+  CategoryModel(
     title: 'WristWatches',
     subTitle: '100 Products',
-    image:  AssetImage('assets/images/category/6.jpg'), 
-    onTap: () {  }, 
-  ),CategoryScreen(
+    image: const AssetImage('assets/images/category/6.jpg'),
+    onTap: () {},
+  ),
+  CategoryModel(
     title: 'Bags',
     subTitle: '100 Products',
-    image: AssetImage('assets/images/category/7.jpg'), 
-    onTap: () {  }, 
-  ),CategoryScreen(
+    image: const AssetImage('assets/images/category/7.jpg'),
+    onTap: () {},
+  ),
+  CategoryModel(
     title: 'Accessories',
     subTitle: '100 Products',
-    image: AssetImage('assets/images/category/8.jpg'), 
-    onTap: () {  }, 
+    image: const AssetImage('assets/images/category/8.jpg'),
+    onTap: () {},
   ),
-]; 
+];
