@@ -1,11 +1,9 @@
-import 'package:essentials/constant/widgets/form_buttons.dart';
-import 'package:essentials/constant/images.dart';
-import 'package:essentials/screens/form/resetpwd.dart';
-import 'package:essentials/screens/shop/home.dart';
-import 'package:essentials/screens/shop/nav_bar.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:Essentials/constant/images.dart';
+import 'package:Essentials/constant/widgets/form_buttons.dart';
+import 'package:Essentials/screens/form/resetpwd.dart';
+import 'package:Essentials/screens/shop/nav_bar.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../constant/widgets/social_btn.dart';

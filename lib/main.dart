@@ -1,9 +1,10 @@
-import 'package:essentials/firebase_options.dart';
-import 'package:essentials/screens/form/login.dart';
-import 'package:essentials/screens/form/signup.dart';
-import 'package:essentials/screens/shop/home.dart';
-import 'package:essentials/services/auth/auth_services.dart';
-import 'package:essentials/theme.dart';
+import 'package:Essentials/firebase_options.dart';
+import 'package:Essentials/screens/form/login.dart';
+import 'package:Essentials/screens/form/signup.dart';
+import 'package:Essentials/screens/shop/home.dart';
+import 'package:Essentials/services/auth/auth_services.dart';
+import 'package:Essentials/theme.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 

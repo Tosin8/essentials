@@ -1,6 +1,7 @@
-import 'package:essentials/constant/images.dart';
-import 'package:essentials/constant/widgets/form_buttons.dart';
-import 'package:essentials/constant/widgets/social_btn.dart';
+import 'package:Essentials/constant/images.dart';
+import 'package:Essentials/constant/widgets/form_buttons.dart';
+import 'package:Essentials/constant/widgets/social_btn.dart';
+
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 

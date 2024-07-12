@@ -2,7 +2,8 @@
 import 'dart:async';
 import 'dart:math';
 
-import 'package:essentials/screens/splash_screen/widgets/splash_model.dart';
+
+import 'package:Essentials/screens/splash_screen/widgets/splash_model.dart';
 import 'package:flutter/material.dart';
 
 class ImageListView extends StatefulWidget {

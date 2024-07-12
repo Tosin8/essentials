@@ -1,7 +1,8 @@
 
 
 
-import 'package:essentials/model/user.dart';
+import 'package:Essentials/model/user.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 

@@ -1,8 +1,10 @@
-import 'package:essentials/screens/constant.dart';
-import 'package:essentials/screens/form/login.dart';
-import 'package:essentials/screens/form/signup.dart';
-import 'package:essentials/screens/splash_screen/widgets/image_list_view.dart';
+import 'package:Essentials/screens/constant.dart';
+import 'package:Essentials/screens/form/login.dart';
+import 'package:Essentials/screens/form/signup.dart';
+
 import 'package:flutter/material.dart';
+
+import 'widgets/image_list_view.dart';
 
 
 

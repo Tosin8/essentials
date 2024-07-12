@@ -1,4 +1,5 @@
-import 'package:essentials/screens/shop/categories/category.dart';
+import 'package:Essentials/screens/shop/categories/category.dart';
+
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 

@@ -25,19 +25,19 @@ List categories =  [
   ),
  CategoryScreen(
     title: 'Perfumes',
-    subTitle: '100 Products',
+    subTitle: '60 Products',
     image: const AssetImage('assets/images/category/2.jpg'), 
     onTap: () {  }, 
   ),
   CategoryScreen(
     title: 'Shoes',
-    subTitle: '100 Products',
+    subTitle: '152 Products',
     image: const AssetImage('assets/images/category/3.jpg'), 
     onTap: () {  }, 
   ),
   CategoryScreen(
     title: 'Cosmetics',
-    subTitle: '100 Products',
+    subTitle: '80 Products',
     image: const AssetImage('assets/images/category/4.jpg'), 
     onTap: () {  }, 
   ),CategoryScreen(
