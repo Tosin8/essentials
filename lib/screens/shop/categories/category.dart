@@ -36,24 +36,20 @@ appBar: PreferredSize(
                  height: 200,
                     decoration:  BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                    image:   DecorationImage(
-                       //image: AssetImage('assets/images/category/1.jpg'),
-                       image: categories[index].image,
+                    // image:   DecorationImage(
+                 
+                    //    image: categories[index].image,
                      
                     
-                       fit: BoxFit.cover), 
+                    //    fit: BoxFit.cover), 
                        
                     ),
-                    foregroundDecoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-                      gradient: const LinearGradient(colors:[
-              Colors.black, Colors.transparent, Colors.transparent
-                      ], begin: Alignment.bottomCenter, end: Alignment.topCenter),
-                    ),
-                  
-                     child:  Padding(
-                       padding: const EdgeInsets.all(8.0),
-                       child: Column(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15),
+                      child:  Stack(
+                        children: [
+                          Image.asset(categories[index].image), 
+                          Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -64,7 +60,16 @@ appBar: PreferredSize(
                 const SizedBox(height: 20,), 
               ],
                        ),
-                     ),
+                     
+
+
+                        ],
+                      )
+                      
+                    ), 
+                  
+                  
+                      
                     
                     ),
             ),
@@ -79,3 +84,13 @@ appBar: PreferredSize(
 );
   }
 }
+
+
+
+// gradient
+  // foregroundDecoration: BoxDecoration(
+  //             borderRadius: BorderRadius.circular(15),
+  //                     gradient: const LinearGradient(colors:[
+  //             Colors.black, Colors.transparent, Colors.transparent
+  //                     ], begin: Alignment.bottomCenter, end: Alignment.topCenter),
+  //                   ),
