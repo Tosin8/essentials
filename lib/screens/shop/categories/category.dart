@@ -17,43 +17,50 @@ appBar: PreferredSize(
   title: const Text('Category',), 
   ), 
   ),
-  body: Padding(
-    padding: const EdgeInsets.all(15.0),
-    child: Column(
-      children: [
-        Container(
+  body: SingleChildScrollView(
+    child: Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: Column(
+        children: [
+          Container(
+            
+            width: double.infinity, 
+             height: 200,
+      decoration:  BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+      image:  const DecorationImage(
+         image: AssetImage('assets/images/category/1.jpg'),
+       
+      
+         fit: BoxFit.cover), 
+         
+      ),
+      foregroundDecoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+        gradient: const LinearGradient(colors:[
+          Colors.black, Colors.transparent, Colors.transparent
+        ], begin: Alignment.bottomCenter, end: Alignment.topCenter),
+      ),
+    
+       child: const Padding(
+         padding: EdgeInsets.all(8.0),
+         child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Clothes',
+             style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),), 
+            Text('20 Products', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500),),
+            SizedBox(height: 20,), 
+          ],
+         ),
+       ),
+      
+      ),
+      //),
           
-          width: double.infinity, 
-           height: 200,
-    decoration:  BoxDecoration(
-      borderRadius: BorderRadius.circular(15),
-    image:  const DecorationImage(
-       //image: AssetImage('assets/images/category/1.jpg'),
-       image: CachedNetworkImageProvider(
-        'https://unsplash.com/photos/assorted-color-shirt-hanging-beside-wall-DqJMxq5ZDqA',
-       ), 
-    
-       fit: BoxFit.cover), 
-    ),
-    child: Container(
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(15),
-      gradient: const LinearGradient(colors:[
-        Colors.black, Colors.transparent, Colors.transparent
-      ], begin: Alignment.bottomCenter, end: Alignment.topCenter),
-    ),
-     child: const Column(
-      mainAxisAlignment: MainAxisAlignment.end,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text('Clothes', style: TextStyle(color: Colors.white, fontSize: 18),)
-      ],
-     ),
-    
-    ),
-    ),
-        
-      ],
+        ],
+      ),
     ),
   ),
   ), 

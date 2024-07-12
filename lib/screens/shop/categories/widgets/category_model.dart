@@ -6,12 +6,12 @@ class CategoryScreen {
   String title;
   String subTitle; 
   ImageProvider image; 
-  GestureTapCallback press; 
+  VoidCallback onTap; 
   CategoryScreen({
     required this.title,
     required this.subTitle,
     required this.image,
-    required this.press,
+    required this.onTap,
   });
 }
 
@@ -21,22 +21,8 @@ List categories = [
     title: 'T- SHIRTS',
     subTitle: '100 Products',
     image: AssetImage('assets/images/category/1.jpg'), 
-    press: (){},
+    onTap: () {  }, 
   ),
-  CategoryScreen(
-    title: 'SHOES',
-    subTitle: '182 Products',
-    image: NetworkImage('https://picsum.photos/200'), press: () {  },
-  ),
-  CategoryScreen(
-    title: 'FRAGNANCE',
-    subTitle: '86 PRODUCTS',
-    image: NetworkImage('https://picsum.photos/200'), press: () {  },
-  ),
-  CategoryScreen(
-    title: 'MAKE UPS',
-    subTitle: '47 PRODUCTS',
-    image: NetworkImage('https://picsum.photos/200'), press: () {  },
-  ),
+
   
 ]; 
