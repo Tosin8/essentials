@@ -27,7 +27,8 @@ appBar: PreferredSize(
     decoration:  BoxDecoration(
       borderRadius: BorderRadius.circular(15),
     image: const DecorationImage(
-       image: AssetImage('assets/images/category/1.jpg'),
+       //image: AssetImage('assets/images/category/1.jpg'),
+       image: CachedNetworkImage
     
        fit: BoxFit.cover), 
     ),
